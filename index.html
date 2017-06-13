@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+    <title>CCFrontTask1</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+        
+        [data-tooltip] {
+            border-bottom: 2px dotted #ff5722;
+            position: relative;
+        }
+        
+        [data-tooltip]:hover {
+            cursor: help;
+        }
+        
+        [data-tooltip]:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            background: #ff5722;
+            color: #ffffff;
+            border-radius: 5px;
+            top: -52px;
+            left: -105px;
+            width: 222px;
+            height: 40px;
+            line-height: 40px;
+            padding-left: 9px;
+            padding-right: 9px;
+        }
+        
+        [data-tooltip]:hover::before {
+            content: "";
+            position: absolute;
+            border-top: 15px solid #ff5722;
+            border-right: 11px solid transparent;
+            border-left: 11px solid transparent;
+            top: -14px;
+            left: 7px;
+        }
+        
+    </style>
+</head>
+<body>
+    <section class = "container">
+        <article>
+            <p>This is an awesome <span data-tooltip = "It's so cool">tooltip</span></p>
+        </article>
+    </section>
+</body>
+</html>
